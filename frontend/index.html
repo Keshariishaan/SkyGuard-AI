@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SkyGuard AI — Sensor Anomaly System</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<!-- Plain JS: no JSX, loaded before the Babel-compiled component files -->
+<script src="js/utils.js"></script>
+<script src="js/api.js"></script>
+
+<!-- JSX components, transpiled in-browser by babel-standalone -->
+<script type="text/babel" src="js/components/Header.js"></script>
+<script type="text/babel" src="js/components/Hero.js"></script>
+<script type="text/babel" src="js/components/Kpis.js"></script>
+<script type="text/babel" src="js/components/Params.js"></script>
+<script type="text/babel" src="js/components/Chart.js"></script>
+<script type="text/babel" src="js/components/Telemetry.js"></script>
+<script type="text/babel" src="js/components/Log.js"></script>
+<script type="text/babel" src="js/components/Docs.js"></script>
+<script type="text/babel" src="js/components/AppPyView.js"></script>
+<script type="text/babel" src="js/App.js"></script>
+</body>
+</html>

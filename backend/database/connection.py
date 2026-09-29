@@ -1,0 +1,25 @@
+"""
+SQLAlchemy engine/session setup. Uses SQLite by default (DATABASE_URL in
+.env) so the project runs with zero external services; point DATABASE_URL
+at Postgres/MySQL in production without changing any other code.
+"""
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import declarative_base, sessionmaker
+
+from backend.utils.config import settings
+
+connect_args = {"check_same_thread": False} if settings.DATABASE_URL.startswith("sqlite") else {}
+
+engine = create_engine(settings.DATABASE_URL, connect_args=connect_args)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
+
+
+def get_db():
+    """FastAPI dependency: yields a DB session and always closes it."""
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

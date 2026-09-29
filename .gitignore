@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+.env
+
+*.db
+skyguard.db
+
+ml/models/*.pkl
+
+.DS_Store
+node_modules/
+
+# Python virtual environments
+.venv312/
+
+# Python cache
+*.pyo
+
+# Environment variables
+.env.*
+
+# Local IDE settings
+.vscode/
